@@ -50,6 +50,7 @@ import AdminGetAllSubject from './Pages/Admin/AdminGetAllSubjects'
 
 import AdminHome from './Pages/Admin/AdminHome'
 import 'font-awesome/css/font-awesome.min.css'; 
+import Libarary from './Pages/Student/Libarary';
 
 
 
@@ -124,6 +125,7 @@ function App() {
           <Route exact path="/forgotPassword/:user" component={ForgotPassword} />
           <Route exact path="/chat/:room" component={Chat} />
           <Route exact path="/student/:registrationNumber" component={RecieverUserDetails} />
+          <Route exact path="/books" component={Libarary} />
         </Switch>
       </Router>
     </div>

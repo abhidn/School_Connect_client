@@ -1,7 +1,7 @@
 import axios from 'axios';
 import setAuthToken from '../utils/setAuthToken'
 import jwt_decode from 'jwt-decode';
-import { SET_STUDENT, SET_ERRORS_HELPER, SET_ERRORS, STUDENT_UPDATE_PASSWORD, SET_OTP, SET_FLAG } from '../actionTypes'
+import { SET_STUDENT, SET_ERRORS_HELPER, SET_ERRORS, STUDENT_UPDATE_PASSWORD, SET_OTP, SET_FLAG ,GET_BOOKS} from '../actionTypes'
 
 const url = "http://localhost:5000"
 
@@ -18,6 +18,8 @@ const setStudent = (data) => {
         payload: data
     }
 }
+
+
 
 const chatHelp = (data) => {
     return {
@@ -314,6 +316,10 @@ export const getAllSubjects = () => {
     }
 }
 
+
+
+
+
 export const fetchAttendence = () => {
     return async (dispatch) => {
         try {
@@ -354,6 +360,8 @@ export const setStudentUser = data => {
     };
 }
 
+
+
 export const studentLogout = () =>
     (dispatch) => {
         // Remove token from localStorage
@@ -363,3 +371,4 @@ export const studentLogout = () =>
         // Set current user to {} which will set isAuthenticated to false
         dispatch(setStudent({}));
     };
+

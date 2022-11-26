@@ -5,7 +5,7 @@ import { studentLogout, newerChats, previousChats } from '../redux/action/studen
 import '../stylesheets/navbar.css'
 import { FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa';
 
-
+import Libarary from '../Pages/Student/Libarary'
 const Home = () => {
     const history = useHistory()
     const store = useSelector((store) => store)
@@ -88,6 +88,9 @@ const Home = () => {
                                     </li>
                                     <li className="nav-item">
                                         <button type="button" className="btn"><Link to="/student/updatePassword"><li>UPDATE PASSWORD</li></Link></button>
+                                    </li>
+                                    <li className="nav-item">
+                                        <button type="button" className="btn"><Link to='/books'><li>LIBRARY</li></Link></button>
                                     </li>
 
                                 </ul>

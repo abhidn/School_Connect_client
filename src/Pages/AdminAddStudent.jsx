@@ -171,28 +171,60 @@ const AdminAddStudent = () => {
 
                                         <div className="form-group">
                                             <label htmlFor="genderId">Gender</label>
-                                            <select onChange={(e) => setGender(e.target.value)} class="form-control" id="genderId">
+                                            {/* <select onChange={(e) => setGender(e.target.value)} class="form-control" id="genderId"> */}
+                                            <select onChange={(e) => setGender(e.target.value)} className={classnames("form-control",
+                                                {
+                                                    'is-invalid': error.gender
+                                                })} id="genderId">
                                                 <option>Select</option>
                                                 <option value="Male">Male</option>
                                                 <option value="Female">Female</option>
                                                 <option value="Other">Other</option>
                                             </select>
+                                            {error.gender && (<div className="invalid-feedback">{error.gender}</div>)}
                                         </div>
                                         <div className="form-group">
                                             <label htmlFor="numberId">Contact Number</label>
-                                            <input onChange={(e) => setContactNumber(e.target.value)} required type="number" class="form-control" id="numberId" />
+                                            {/* <input onChange={(e) => setContactNumber(e.target.value)} required type="number" class="form-control" id="numberId" /> */}
+
+                                            <input onChange={(e) => setContactNumber(e.target.value)} required type="number"  className={classnames("form-control",
+                                                {
+                                                    'is-invalid': error.studentMobileNumber
+                                                })} id="numberId" />
+                                            {error.studentMobileNumber && (<div className="invalid-feedback">{error.studentMobileNumber}</div>)}
+
                                         </div>
                                         <div className="form-group">
                                             <label htmlFor="fatherId">Father Name</label>
-                                            <input onChange={(e) => setFatherName(e.target.value)} type="text" class="form-control" id="fatherId" />
+                                            {/* <input onChange={(e) => setFatherName(e.target.value)} type="text" class="form-control" id="fatherId" /> */}
+
+                                            <input onChange={(e) => setFatherName(e.target.value)} type="text"  className={classnames("form-control",
+                                                {
+                                                    'is-invalid': error.fatherName
+                                                })} id="fatherId" />
+                                            {error.fatherName && (<div className="invalid-feedback">{error.fatherName}</div>)}
+
                                         </div>
                                         <div className="form-group">
                                             <label htmlFor="fathercnId">Father Contact Number</label>
-                                            <input onChange={(e) => setFatherContactNumber(e.target.value)} type="number" className="form-control" id="fathercnId" />
+                                            {/* <input onChange={(e) => setFatherContactNumber(e.target.value)} type="number" className="form-control" id="fathercnId" /> */}
+
+                                            <input onChange={(e) => setFatherContactNumber(e.target.value)} type="number"  className={classnames("form-control",
+                                                {
+                                                    'is-invalid': error.fatherMobileNumber
+                                                })} id="fathercnId" />
+                                            {error.fatherMobileNumber && (<div className="invalid-feedback">{error.fatherMobileNumber}</div>)}
                                         </div>
                                         <div className="form-group">
                                             <label htmlFor="aadharId">Aadhar Card Number</label>
-                                            <input onChange={(e) => setAadharCard(e.target.value)} type="number" className="form-control" id="aadharId" />
+                                            {/* <input onChange={(e) => setAadharCard(e.target.value)} type="number" className="form-control" id="aadharId" /> */}
+
+                                            <input onChange={(e) => setAadharCard(e.target.value)} type="number"  className={classnames("form-control",
+                                                {
+                                                    'is-invalid': error.aadharCard
+                                                })} id="aadharId" />
+                                            {error.aadharCard && (<div className="invalid-feedback">{error.aadharCard}</div>)}
+                                            
                                         </div>
                                     </div>
                                 </div>

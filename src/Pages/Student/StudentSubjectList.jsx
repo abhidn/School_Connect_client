@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllSubjects } from '../../redux/action/studentAction'
 import HomeHelper from '../../Components/HomeHelper'
@@ -9,8 +9,8 @@ const StudentSubjectList = () => {
     const history = useHistory()
     const dispatch = useDispatch()
     useEffect(() => {
-       dispatch(getAllSubjects())
-    },[])
+        dispatch(getAllSubjects())
+    }, [])
     return (
         <>
             {store.student.isAuthenticated ? <>
@@ -45,8 +45,8 @@ const StudentSubjectList = () => {
                         </div>
                     </div>
                 </div></> : (history.push('/'))}
-           
-            </>
+
+        </>
     )
 }
 

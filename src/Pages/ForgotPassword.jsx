@@ -32,7 +32,7 @@ const ForgotPassword = (props) => {
         if (store.student.flag) {
             setHelper(true)
         }
-    },[store.student.flag])
+    }, [store.student.flag])
 
     const sendOTPHandler = (e) => {
         e.preventDefault()
@@ -40,19 +40,18 @@ const ForgotPassword = (props) => {
             dispatch(getOTPStudent({ email }))
         }
         else if (user === "faculty") {
-           dispatch(getOTPFaculty({email}))
+            dispatch(getOTPFaculty({ email }))
         }
     }
 
     const submitOTPHandler = (e) => {
         e.preventDefault()
         if (user === "student") {
-            dispatch(submitOTPStudent({ email, otp, newPassword, confirmNewPassword },history))
+            dispatch(submitOTPStudent({ email, otp, newPassword, confirmNewPassword }, history))
         }
-        else if (user === "faculty")
-        {
+        else if (user === "faculty") {
             dispatch(submitOTPFaculty({ email, otp, newPassword, confirmNewPassword }, history))
-            }
+        }
     }
 
 
@@ -77,37 +76,37 @@ const ForgotPassword = (props) => {
                             <button type="submit" className="btn btn-primary">Send OTP</button>
                         </form>
                     </> : <>
-                            <form noValidate onSubmit={submitOTPHandler}>
-                                <div className="form-group">
-                                    <label htmlFor="exampleInputEmail1">OTP</label>
-                                    <input onChange={(e) => setOtp(e.target.value)} value={otp} type="number" className={classnames('form-control', {
-                                        'is-invalid': errors.otp
-                                    })} id="exampleInputEmail1" />
-                                    {errors.otp && (
-                                        <div className="invalid-feedback">{errors.otp}</div>
-                                    )}
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="exampleInputEmail2">New Password</label>
-                                    <input onChange={(e) => setNewPassword(e.target.value)} value={newPassword} type="password" className={classnames('form-control', {
-                                        'is-invalid': errors.newPassword
-                                    })} id="exampleInputEmail2" />
-                                    {errors.newPassword && (
-                                        <div className="invalid-feedback">{errors.newPassword}</div>
-                                    )}
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="exampleInputEmail3">Confirm New Password</label>
-                                    <input onChange={(e) => setConfirmNewPassword(e.target.value)} value={confirmNewPassword} type="password" className={classnames('form-control', {
-                                        'is-invalid': errors.confirmNewPassword
-                                    })} id="exampleInputEmail3" />
-                                    {errors.confirmNewPassword && (
-                                        <div className="invalid-feedback">{errors.confirmNewPassword}</div>
-                                    )}
-                                </div>
-                                <button type="submit" className="btn btn-primary">Submit</button>
-                            </form>
-                        </>}
+                        <form noValidate onSubmit={submitOTPHandler}>
+                            <div className="form-group">
+                                <label htmlFor="exampleInputEmail1">OTP</label>
+                                <input onChange={(e) => setOtp(e.target.value)} value={otp} type="number" className={classnames('form-control', {
+                                    'is-invalid': errors.otp
+                                })} id="exampleInputEmail1" />
+                                {errors.otp && (
+                                    <div className="invalid-feedback">{errors.otp}</div>
+                                )}
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="exampleInputEmail2">New Password</label>
+                                <input onChange={(e) => setNewPassword(e.target.value)} value={newPassword} type="password" className={classnames('form-control', {
+                                    'is-invalid': errors.newPassword
+                                })} id="exampleInputEmail2" />
+                                {errors.newPassword && (
+                                    <div className="invalid-feedback">{errors.newPassword}</div>
+                                )}
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="exampleInputEmail3">Confirm New Password</label>
+                                <input onChange={(e) => setConfirmNewPassword(e.target.value)} value={confirmNewPassword} type="password" className={classnames('form-control', {
+                                    'is-invalid': errors.confirmNewPassword
+                                })} id="exampleInputEmail3" />
+                                {errors.confirmNewPassword && (
+                                    <div className="invalid-feedback">{errors.confirmNewPassword}</div>
+                                )}
+                            </div>
+                            <button type="submit" className="btn btn-primary">Submit</button>
+                        </form>
+                    </>}
                 </div>
             </div>
         </div>
