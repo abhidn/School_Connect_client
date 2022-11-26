@@ -49,7 +49,10 @@ import AdminGetAllStudent from './Pages/Admin/AdminGetAllStudents'
 import AdminGetAllSubject from './Pages/Admin/AdminGetAllSubjects'
 
 import AdminHome from './Pages/Admin/AdminHome'
- 
+import 'font-awesome/css/font-awesome.min.css'; 
+
+
+
 if (window.localStorage.facultyJwtToken) {
   setAuthToken(localStorage.facultyJwtToken);
   const decoded = jwt_decode(localStorage.facultyJwtToken);

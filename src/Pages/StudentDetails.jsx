@@ -9,9 +9,9 @@ const StudentDetails = () => {
     const store = useSelector((store) => store)
     const history = useHistory()
     const [name, setName] = useState('')
-    const [department, setDepartment] = useState("")
+    const [classroom, setDepartment] = useState("")
     const [year, setYear] = useState("")
-    const [section, setSection] = useState("")
+    const [division, setSection] = useState("")
     const [result, setResult] = useState([])
 
 
@@ -26,9 +26,9 @@ const StudentDetails = () => {
                 // url: 'https://apna-erp.herokuapp.com/api/student/getAllStudents',
                 url: 'http://localhost:5000/api/student/getAllStudents',
                 data: {
-                    department,
+                    classroom,
                     year,
-                    section
+                    division
                 }
             })
             setResult(data.result)
@@ -90,12 +90,15 @@ const StudentDetails = () => {
                                             <label htmlFor="branchId">Branch</label>
                                             <select onChange={(e) => setDepartment(e.target.value)} className="form-control" id="bramchId">
                                                 <option>Select</option>
-                                                <option value="E.C.E">E.C.E</option>
-                                                <option value="E.E.E" >E.E.E</option>
-                                                <option value="Mechanical">Mechanical</option>
-                                                <option value="Civil">Civil</option>
-                                                <option value="I.T">I.T</option>
-                                                <option value="C.S.E">C.S.E</option>
+                                               
+
+                                                <option value="five">Five</option>
+                                                <option value="six">Six</option>
+                                                <option value="seven">Seven</option>
+                                                <option value="eight">Eight</option>
+                                                <option value="Nine">Nine</option>
+                                                <option value="ten">Ten</option>
+
                                             </select>
                                         </div>
                                         <div className="form-group">
@@ -109,7 +112,7 @@ const StudentDetails = () => {
                                             </select>
                                         </div>
                                         <div className="form-group">
-                                            <label htmlFor="sectionId">Section</label>
+                                            <label htmlFor="sectionId">division</label>
                                             <select onChange={(e) => setSection(e.target.value)} className="form-control" id="sectionId">
                                                 <option>Select</option>
                                                 <option value="A">A</option>

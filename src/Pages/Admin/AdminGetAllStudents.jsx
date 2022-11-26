@@ -8,7 +8,7 @@ import classnames from 'classnames'
 const AdminGetAllFaculty = () => {
     const store = useSelector((store) => store)
     const dispatch = useDispatch()
-    const [department, setDepartment] = useState('')
+    const [classroom, setDepartment] = useState('')
     const [year, setYear] = useState('')
     const [isLoading, setIsLoading] = useState(false)
     
@@ -21,7 +21,7 @@ const AdminGetAllFaculty = () => {
     const formHandler = (e) => {
         e.preventDefault()
         setIsLoading(true)
-        dispatch(adminGetAllStudent({ department, year }))
+        dispatch(adminGetAllStudent({ classroom, year }))
     }
 
     useEffect(() => {
@@ -39,20 +39,21 @@ const AdminGetAllFaculty = () => {
                         <div className="col-md-4">
                             <form noValidate onSubmit={formHandler}>
                                 <div className="form-group">
-                                    <label htmlFor="departmentId">Department</label>
+                                    <label htmlFor="departmentId">classroom</label>
                                     <select onChange={(e) => setDepartment(e.target.value)} className={classnames("form-control",
                                         {
-                                            'is-invalid': error.department
+                                            'is-invalid': error.classroom
                                         })} id="departmentId">
                                         <option>Select</option>
-                                        <option value="E.C.E">E.C.E</option>
-                                        <option value="C.S.E">C.S.E</option>
-                                        <option value="I.T">I.T</option>
-                                        <option value="E.E.E">E.E.E</option>
-                                        <option value="Mechanical">Mechanical</option>
-                                        <option value="Civil">Civil</option>
+                                        
+                                        <option value="five">Five</option>
+                                                <option value="six">Six</option>
+                                                <option value="seven">Seven</option>
+                                                <option value="eight">Eight</option>
+                                                <option value="Nine">Nine</option>
+                                                <option value="ten">Ten</option>
                                     </select>
-                                    {error.department && (<div className="invalid-feedback">{error.department}</div>)}
+                                    {error.classroom && (<div className="invalid-feedback">{error.classroom}</div>)}
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="yearId">Year</label>
@@ -93,7 +94,7 @@ const AdminGetAllFaculty = () => {
                                         <th scope="col">Registration Number</th>
                                         <th scope="col">Name</th>
                                         <th scope="col">Email</th>
-                                        <th scope="col">Section</th>
+                                        <th scope="col">division</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -104,7 +105,7 @@ const AdminGetAllFaculty = () => {
                                                 <td>{res.registrationNumber}</td>
                                                 <td>{res.name}</td>
                                                 <td>{res.email}</td>
-                                                <td>{res.section}</td>
+                                                <td>{res.division}</td>
                                             </tr>
                                         )
                                     }

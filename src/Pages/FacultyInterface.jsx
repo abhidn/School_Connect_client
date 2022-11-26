@@ -58,8 +58,8 @@ const FacultyInterface = () => {
                                                 <td>{store.faculty.faculty.faculty.joiningYear}</td>
                                             </tr>
                                             <tr>
-                                                <td>Department</td>
-                                                <td>{store.faculty.faculty.faculty.department}</td>
+                                                <td>classroom</td>
+                                                <td>{store.faculty.faculty.faculty.classroom}</td>
                                             </tr>
                                             <tr>
                                                 <td>Gender</td>

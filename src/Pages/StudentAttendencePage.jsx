@@ -32,7 +32,7 @@ const Home = () => {
                                         <th scope="col">Maximum Hours</th>
                                         <th scope="col">Present Hours</th>
                                         <th scope="col">Absent Hours</th>
-                                        <th scope="col">Total Hours</th>
+                                        <th scope="col">Conducted Hours</th>
                                         <th scope="col">Attendence</th>
                                     </tr>
                                 </thead>

@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'
 import classnames from 'classnames'
 import { adminAddStudent } from '../redux/action/adminAction'
 import AdminHomeHelper from '../Components/AdminHomeHelper'
-
+import validator from 'validator'
 
 const AdminAddStudent = () => {
     const store = useSelector((store) => store)
@@ -12,9 +12,9 @@ const AdminAddStudent = () => {
     const history = useHistory()
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
-    const [department, setDepartment] = useState('')
+    const [classroom, setDepartment] = useState('')
     const [year, setYear] = useState('')
-    const [section, setSection] = useState('')
+    const [division, setSection] = useState('')
     const [dob, setDob] = useState('')
     const [gender, setGender] = useState('')
     const [studentMobileNumber, setContactNumber] = useState('')
@@ -33,20 +33,52 @@ const AdminAddStudent = () => {
     const formHandler = (e) => {
         e.preventDefault()
         setIsLoading(true)
+        // if (validator.isMobilePhone(studentMobileNumber)) {
+        //     alert('Please provide valid Contact Number');
+        //     setIsLoading(false)
+        // }
+        // if (!(studentMobileNumber.match('[0-9]{12}'))) {
+        //     alert('Please provide valid Contact Number');
+        //     setIsLoading(false)
+
+        // }
+        // if (!(fatherMobileNumber.match('[0-9]{10}'))) {
+        //     alert('Please provide valid father Mobile Number');
+        //     setIsLoading(false)
+        // }
+        // if (!(aadharCard.match('[0-9]{12}')) ) {
+        //     alert('Please provide valid Adhar Number');
+        //     setIsLoading(false)
+        // }
+        // else {
+        //     dispatch(adminAddStudent({
+        //         name,
+        //         email,
+        //         year,
+        //         classroom,
+        //         fatherName,
+        //         aadharCard,
+        //         gender,
+        //         division: division.toUpperCase(),
+        //         dob: dob.split("-").reverse().join("-"),
+        //         studentMobileNumber,
+        //         fatherMobileNumber
+        //     }))
+        // }
         dispatch(adminAddStudent({
             name,
             email,
             year,
-            department,
+            classroom,
             fatherName,
             aadharCard,
             gender,
-            section: section.toUpperCase(),
+            division: division.toUpperCase(),
             dob: dob.split("-").reverse().join("-"),
             studentMobileNumber,
             fatherMobileNumber
         }))
-    } 
+    }
     useEffect(() => {
         if (store.admin.adminAddStudentFlag) {
             setError({})
@@ -84,20 +116,24 @@ const AdminAddStudent = () => {
                                             {error.email && (<div className="invalid-feedback">{error.email}</div>)}
                                         </div>
                                         <div className="form-group">
-                                            <label htmlFor="departmentId">Department</label>
+                                            <label htmlFor="departmentId">classroom</label>
                                             <select onChange={(e) => setDepartment(e.target.value)} className={classnames("form-control",
                                                 {
-                                                    'is-invalid': error.department
+                                                    'is-invalid': error.classroom
                                                 })} id="departmentId">
                                                 <option>Select</option>
-                                                <option value="E.C.E">E.C.E</option>
-                                                <option value="C.S.E">C.S.E</option>
-                                                <option value="I.T">I.T</option>
-                                                <option value="E.E.E">E.E.E</option>
-                                                <option value="Mechanical">Mechanical</option>
-                                                <option value="Civil">Civil</option>
+
+
+
+                                                <option value="five">Five</option>
+                                                <option value="six">Six</option>
+                                                <option value="seven">Seven</option>
+                                                <option value="eight">Eight</option>
+                                                <option value="Nine">Nine</option>
+                                                <option value="ten">Ten</option>
+
                                             </select>
-                                            {error.department && (<div className="invalid-feedback">{error.department}</div>)}
+                                            {error.classroom && (<div className="invalid-feedback">{error.classroom}</div>)}
                                         </div>
                                         <div className="form-group">
                                             <label htmlFor="yearId">Year</label>
@@ -113,14 +149,14 @@ const AdminAddStudent = () => {
                                             </select>
                                             {error.year && (<div className="invalid-feedback">{error.year}</div>)}
                                         </div>
-                                        
+
                                         <div className="form-group">
-                                            <label htmlFor="sectionId">Section</label>
+                                            <label htmlFor="sectionId">division</label>
                                             <input onChange={(e) => setSection(e.target.value)} type="text" className={classnames("form-control",
                                                 {
-                                                    'is-invalid': error.section
+                                                    'is-invalid': error.division
                                                 })} id="sectionId" />
-                                            {error.section && (<div className="invalid-feedback">{error.section}</div>)}
+                                            {error.division && (<div className="invalid-feedback">{error.division}</div>)}
                                         </div>
                                         <div class="form-group">
                                             <label htmlFor="dobId">DOB</label>
@@ -132,7 +168,7 @@ const AdminAddStudent = () => {
                                         </div>
                                     </div>
                                     <div className="col-md-6">
-                                        
+
                                         <div className="form-group">
                                             <label htmlFor="genderId">Gender</label>
                                             <select onChange={(e) => setGender(e.target.value)} class="form-control" id="genderId">
@@ -173,12 +209,12 @@ const AdminAddStudent = () => {
                             </form>
                         </div>
                     </div>
-                </div></>:(history.push('/'))}
-            
-            </div>
+                </div></> : (history.push('/'))}
 
-            
-      
+        </div>
+
+
+
     )
 }
 

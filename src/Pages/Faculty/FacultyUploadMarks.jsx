@@ -11,10 +11,10 @@ const FacultyUploadMarks = () => {
     const store = useSelector((store) => store)
     const history = useHistory()
     const dispatch = useDispatch() 
-    const [department, setDepartment] = useState("")
+    const [classroom, setDepartment] = useState("")
     const [year, setYear] = useState("")
     const [marks, setMarks] = useState([])
-    const [section, setSection] = useState("")
+    const [division, setSection] = useState("")
     const [subjectCode, setSubjectCode] = useState("")
     const [totalMarks, setTotalMarks] = useState()
     const [exam ,setExam] = useState("")
@@ -52,7 +52,7 @@ const FacultyUploadMarks = () => {
     const formHandler = (e) => {
         e.preventDefault()
     
-       dispatch(fetchStudents(department, year,  section))
+       dispatch(fetchStudents(classroom, year,  division))
 
     }
 
@@ -60,7 +60,7 @@ const FacultyUploadMarks = () => {
 
     const secondFormHandler = (e) => {
         e.preventDefault()
-        dispatch(uploadMarks(subjectCode, exam, totalMarks, marks, department, section
+        dispatch(uploadMarks(subjectCode, exam, totalMarks, marks, classroom, division
         ))
     }
 
@@ -72,16 +72,16 @@ const FacultyUploadMarks = () => {
                     <div className="col-md-4">
                         <form noValidate onSubmit={formHandler}>
                             <div className="form-group">
-                                <label htmlFor="branchId">Department</label>
+                                <label htmlFor="branchId">classroom</label>
                                 <select onChange={(e) => setDepartment(e.target.value)} className={classnames("form-control",
                                     {
-                                        'is-invalid': error.department
+                                        'is-invalid': error.classroom
 
                                     })} id="bramchId">
                                     <option>Select</option>
-                                    <option value={store.faculty.faculty.faculty.department}>{store.faculty.faculty.faculty.department}</option>
+                                    <option value={store.faculty.faculty.faculty.classroom}>{store.faculty.faculty.faculty.classroom}</option>
                                 </select>
-                                {error.department && (<div classNameName="invalid-feedback">{error.department}</div>)}
+                                {error.classroom && (<div classNameName="invalid-feedback">{error.classroom}</div>)}
                             </div>
                             <div className="form-group">
                                 <label htmlFor="yearId">Year</label>
@@ -119,10 +119,10 @@ const FacultyUploadMarks = () => {
                                 {error.year && (<div classNameName="invalid-feedback">{error.year}</div>)}
                             </div> */}
                             <div className="form-group">
-                                <label htmlFor="sectionId">Section</label>
+                                <label htmlFor="sectionId">division</label>
                                 <select onChange={(e) => setSection(e.target.value)} className={classnames("form-control",
                                     {
-                                        'is-invalid': error.section
+                                        'is-invalid': error.division
 
                                     })} id="sectionId">
                                     <option>Select</option>
@@ -133,7 +133,7 @@ const FacultyUploadMarks = () => {
                                     <option value="E">E</option>
                                     <option value="F">F</option>
                                 </select>
-                                {error.section && (<div classNameName="invalid-feedback">{error.section}</div>)}
+                                {error.division && (<div classNameName="invalid-feedback">{error.division}</div>)}
                             </div>
                             <button type="submit" className="btn btn-primary">Search</button>
                         </form>

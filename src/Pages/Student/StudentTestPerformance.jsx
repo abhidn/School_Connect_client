@@ -4,16 +4,46 @@ import { getMarks } from '../../redux/action/studentAction'
 import HomeHelper from '../../Components/HomeHelper'
 import { useHistory } from 'react-router-dom'
 
+import '../../stylesheets/test.css'
+
 const StudentTestPerformance = () => {
     const store = useSelector(store => store)
     const history = useHistory()
     const dispatch = useDispatch()
-
+    let sum1 = 0;
+    let Total_sum1 = 0;
+    let sum2 = 0;
+    let Total_sum2 = 0;
+    let sum = 0;
+    let Total_sum = 0;
     useEffect(() => {
         dispatch(getMarks())
+
     }, [])
-
-
+    if (store.student.allMarks.CycleTest1) {
+        for (let i = 0; i < store.student.allMarks.CycleTest1.length; i++) {
+            sum1 += store.student.allMarks.CycleTest1[i].marks;
+            Total_sum1 += store.student.allMarks.CycleTest1[i].totalMarks;
+        }
+        console.log(sum1);
+        console.log(Total_sum1);
+    }
+    if (store.student.allMarks.CycleTest2) {
+        for (let i = 0; i < store.student.allMarks.CycleTest2.length; i++) {
+            sum2 += store.student.allMarks.CycleTest2[i].marks;
+            Total_sum2 += store.student.allMarks.CycleTest2[i].totalMarks;
+        }
+        console.log(sum2);
+        console.log(Total_sum2);
+    }
+    if (store.student.allMarks.CycleTest2) {
+        for (let i = 0; i < store.student.allMarks.CycleTest2.length; i++) {
+            sum += store.student.allMarks.CycleTest2[i].marks;
+            Total_sum += store.student.allMarks.CycleTest2[i].totalMarks;
+        }
+        console.log(sum);
+        console.log(Total_sum);
+    }
 
     return (
 
@@ -27,7 +57,13 @@ const StudentTestPerformance = () => {
                         <div className="row mt-3">
                             <div className="col-md-8 m-auto">
                                 {store.student.allMarks.CycleTest1.length !== 0 ? <>
-                                    <h4>Cycle Test 1</h4>
+                                    <div class="eleven">
+                                        <h2>Cycle Test 1</h2>
+                                    </div>
+
+
+
+
                                     <table className="table border">
                                         <thead>
                                             <tr>
@@ -36,24 +72,27 @@ const StudentTestPerformance = () => {
                                                 <th scope="col">Subject Name</th>
                                                 <th scope="col">Obtained Marks</th>
                                                 <th scope="col">Total Marks</th>
-                                                <th scope="col">Percentage</th>
+                                                {/* <th scope="col">Percentage</th> */}
                                             </tr>
                                         </thead>
                                         <tbody>
                                             {
                                                 store.student.allMarks.CycleTest1.map((res, index) =>
+
                                                     <tr key={index}>
                                                         <th scope="row">{index + 1}</th>
                                                         <td>{res.subject.subjectCode}</td>
                                                         <td>{res.subject.subjectName}</td>
                                                         <td>{res.marks}</td>
                                                         <td>{res.totalMarks}</td>
-                                                        <td>{(res.marks / res.totalMarks) * 100}%</td>
+                                                        {/* <td>{(res.marks / res.totalMarks) * 100}%</td> */}
+
                                                     </tr>
                                                 )
                                             }
                                         </tbody>
                                     </table></> : null}
+                                <p>Total Percentage: {((sum1) * 100 / Total_sum1)}%</p>
                             </div>
                         </div>
 
@@ -61,10 +100,12 @@ const StudentTestPerformance = () => {
                     }
 
                     {store.student.allMarks.CycleTest2 &&
-                        <div className="row mt-3">
+                        <div className=" row mt-3">
                             <div className="col-md-8 m-auto">
                                 {store.student.allMarks.CycleTest2.length !== 0 ? <>
-                                    <h4>Cycle Test 2</h4>
+                                    <div class="eleven">
+                                        <h2>Cycle Test 2</h2>
+                                    </div>
                                     <table className="table">
                                         <thead>
                                             <tr>
@@ -73,7 +114,7 @@ const StudentTestPerformance = () => {
                                                 <th scope="col">Subject Name</th>
                                                 <th scope="col">Obtained Marks</th>
                                                 <th scope="col">Total Marks</th>
-                                                <th scope="col">Percentage</th>
+                                                {/* <th scope="col">Percentage</th> */}
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -85,12 +126,13 @@ const StudentTestPerformance = () => {
                                                         <td>{res.subject.subjectName}</td>
                                                         <td>{res.marks}</td>
                                                         <td>{res.totalMarks}</td>
-                                                        <td>{(res.marks / res.totalMarks) * 100}%</td>
+                                                        {/* <td>{(res.marks / res.totalMarks) * 100}%</td> */}
                                                     </tr>
                                                 )
                                             }
                                         </tbody>
                                     </table></> : null}
+                                <p>Total Percentage: {((sum2) * 100 / Total_sum2)}%</p>
                             </div>
                         </div>
                     }
@@ -108,11 +150,12 @@ const StudentTestPerformance = () => {
                                                 <th scope="col">Subject Name</th>
                                                 <th scope="col">Obtained Marks</th>
                                                 <th scope="col">Total Marks</th>
-                                                <th scope="col">Percentage</th>
+                                                {/* <th scope="col">Percentage</th> */}
                                             </tr>
                                         </thead>
                                         <tbody>
                                             {
+
                                                 store.student.allMarks.Semester.map((res, index) =>
                                                     <tr key={index}>
                                                         <th scope="row">{index + 1}</th>
@@ -120,12 +163,13 @@ const StudentTestPerformance = () => {
                                                         <td>{res.subject.subjectName}</td>
                                                         <td>{res.marks}</td>
                                                         <td>{res.totalMarks}</td>
-                                                        <td>{((res.marks / res.totalMarks) * 100).toFixed(2)}%</td>
+                                                        {/* <td>{((res.marks / res.totalMarks) * 100).toFixed(2)}%</td> */}
                                                     </tr>
                                                 )
                                             }
                                         </tbody>
                                     </table></> : null}
+                                    <p>Total Percentage: {((sum) * 100 / Total_sum)}%</p>
                             </div>
                         </div>
 
@@ -134,7 +178,18 @@ const StudentTestPerformance = () => {
 
         </>
 
+
+
+
     )
+
+
+
+
+
+
+
+
 }
 
 export default StudentTestPerformance

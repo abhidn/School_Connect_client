@@ -48,8 +48,8 @@ const AdminHome = () => {
                                                 <td>{store.admin.admin.joiningYear}</td>
                                             </tr>
                                             <tr>
-                                                <td>Department</td>
-                                                <td>{store.admin.admin.department}</td>
+                                                <td>classroom</td>
+                                                <td>{store.admin.admin.classroom}</td>
                                             </tr>
                                             <tr>
                                                 <td>Contact Number</td>

@@ -13,7 +13,7 @@ const AdminAddAdmin = () => {
     const history = useHistory()
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
-    const [department, setDepartment] = useState('')
+    const [classroom, setDepartment] = useState('')
     const [dob, setDob] = useState('')
     const [contactNumber, setContactNumber] = useState('')
     const [error, setError] = useState({})
@@ -34,7 +34,7 @@ const AdminAddAdmin = () => {
         dispatch(adminAddAdmin({
             name,
             email,
-            department,
+            classroom,
             contactNumber,
             dob: dob.split("-").reverse().join("-")
         }))
@@ -83,20 +83,23 @@ const AdminAddAdmin = () => {
                                         </div>
 
                                         <div className="form-group">
-                                            <label htmlFor="departmentId">Department</label>
+                                            <label htmlFor="departmentId">classroom</label>
                                             <select onChange={(e) => setDepartment(e.target.value)} className={classnames("form-control",
                                                 {
-                                                    'is-invalid': error.department
+                                                    'is-invalid': error.classroom
                                                 })} id="departmentId">
                                                 <option>Select</option>
-                                                <option value="E.C.E">E.C.E</option>
-                                                <option value="C.S.E">C.S.E</option>
-                                                <option value="E.E.E">E.E.E</option>
-                                                <option value="I.T">I.T</option>
-                                                <option value="Mechanical">Mechanical</option>
-                                                <option value="Civil">Civil</option>
+                                                
+                                                
+                                                <option value="five">Five</option>
+                                                <option value="six">Six</option>
+                                                <option value="seven">Seven</option>
+                                                <option value="eight">Eight</option>
+                                                <option value="Nine">Nine</option>
+                                                <option value="ten">Ten</option>
+                                                
                                             </select>
-                                            {error.department && (<div className="invalid-feedback">{error.department}</div>)}
+                                            {error.classroom && (<div className="invalid-feedback">{error.classroom}</div>)}
                                         </div>
                                     </div>
                                     <div className="col-md-6">

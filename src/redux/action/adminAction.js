@@ -198,13 +198,13 @@ export const adminAddAdmin = (adminCredentails) => {
 }
 
 
-export const adminGetAllFaculty = (department) => {
+export const adminGetAllFaculty = (classroom) => {
     return async (dispatch) => {
         try {
             const { data } = await axios({
                 method: 'Post',
                 url: url + "/api/admin/getAllFaculty",
-                data: department
+                data: classroom
             })
             dispatch(adminGetAllFacultyHelper(data.result))
         }
@@ -236,13 +236,13 @@ export const adminGetAllStudent = (searchCredentials) => {
     }
 }
 
-export const adminGetAllSubject = (department) => {
+export const adminGetAllSubject = (classroom) => {
     return async (dispatch) => {
         try {
             const { data } = await axios({
                 method: 'Post',
                 url: url + "/api/admin/getAllSubject",
-                data: department
+                data: classroom
             })
             dispatch(adminGetAllSubjectHelper(data.result))
         }

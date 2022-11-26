@@ -61,12 +61,12 @@ const RecieverUserDetails = (props) => {
                                                 <td>{store.student.regNumStudent.year}</td>
                                             </tr>
                                             <tr>
-                                                <td>Department</td>
-                                                <td>{store.student.regNumStudent.department}</td>
+                                                <td>classroom</td>
+                                                <td>{store.student.regNumStudent.classroom}</td>
                                             </tr>
                                             <tr>
-                                                <td>Section</td>
-                                                <td>{store.student.regNumStudent.section}</td>
+                                                <td>division</td>
+                                                <td>{store.student.regNumStudent.division}</td>
                                             </tr>
                                             <tr>
                                                 <td>Batch</td>

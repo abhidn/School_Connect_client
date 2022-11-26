@@ -116,13 +116,13 @@ export const submitOTPFaculty = (newPasswordWithOtp, history) => {
 }
 
 
-export const fetchStudents = (department, year, section) => {
+export const fetchStudents = (classroom, year, division) => {
     return async (dispatch) => {
         try {
             const { data } = await axios({
                 method: 'Post',
                 url: url + "/api/faculty/fetchStudents",
-                data: { department, year, section}
+                data: { classroom, year, division}
             })
             dispatch(fetchStudentsHelper(data.result))
             dispatch(subjectCodeListHelper(data.subjectCode))
@@ -159,14 +159,14 @@ export const facultyUpdate = (updatedData) => {
     }
 }
 
-export const markAttendence = (selectedStudents, subjectCode, department, year,
-           section) => {
+export const markAttendence = (selectedStudents, subjectCode, classroom, year,
+           division) => {
     return async(dispatch) => {
         try {
                 await axios({
                 method: 'Post',
                     url: url + "/api/faculty/markAttendence",
-                data: { selectedStudents, subjectCode, department, year, section}
+                data: { selectedStudents, subjectCode, classroom, year, division}
                 })
             alert("attendence has been marked successfully")
             dispatch({
@@ -181,14 +181,14 @@ export const markAttendence = (selectedStudents, subjectCode, department, year,
 }
 
 export const uploadMarks = (subjectCode, exam, totalMarks, marks,
-    department, year, section, ) => {
+    classroom, year, division, ) => {
     return async (dispatch) => {
         try {
             await axios({
                 method: 'Post',
                 url: url + "/api/faculty/uploadMarks",
                 data: {
-                    subjectCode, exam, totalMarks, marks, department, year, section,
+                    subjectCode, exam, totalMarks, marks, classroom, year, division,
                     }
             })
             alert("Mark uploaded successfully")

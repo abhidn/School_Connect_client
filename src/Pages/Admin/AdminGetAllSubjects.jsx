@@ -8,7 +8,7 @@ import classnames from 'classnames'
 const AdminGetAllSubjects = () => {
     const store = useSelector((store) => store)
     const dispatch = useDispatch()
-    const [department, setDepartment] = useState('')
+    const [classroom, setDepartment] = useState('')
     const [year, setYear] = useState('')
     const [error, setError] = useState({})
     const [isLoading, setIsLoading] = useState(false)
@@ -18,7 +18,7 @@ const AdminGetAllSubjects = () => {
     const formHandler = (e) => {
         e.preventDefault()
         setIsLoading(true)
-        dispatch(adminGetAllSubject({ department, year }))
+        dispatch(adminGetAllSubject({ classroom, year }))
 
     }
     useEffect(() => {
@@ -27,6 +27,7 @@ const AdminGetAllSubjects = () => {
         }
 
     }, [store.admin.allSubject.length])
+    console.log(store.admin.allSubject)
     return (
         <div>
             <div>
@@ -37,20 +38,23 @@ const AdminGetAllSubjects = () => {
                             <div className="col-md-4">
                                 <form noValidate onSubmit={formHandler}>
                                     <div className="form-group">
-                                        <label htmlFor="departmentId">Department</label>
+                                        <label htmlFor="departmentId">classroom</label>
                                         <select onChange={(e) => setDepartment(e.target.value)} className={classnames("form-control",
                                             {
-                                                'is-invalid': error.department
+                                                'is-invalid': error.classroom
                                             })} id="departmentId">
                                             <option>Select</option>
-                                            <option value="E.C.E">E.C.E</option>
-                                            <option value="C.S.E">C.S.E</option>
-                                            <option value="E.E.E">E.E.E</option>
-                                            <option value="I.T">I.T</option>
-                                            <option value="Mechanical">Mechanical</option>
-                                            <option value="Civil">Civil</option>
+
+
+                                            <option value="five">Five</option>
+                                            <option value="six">Six</option>
+                                            <option value="seven">Seven</option>
+                                            <option value="eight">Eight</option>
+                                            <option value="Nine">Nine</option>
+                                            <option value="ten">Ten</option>
+
                                         </select>
-                                        {error.department && (<div className="invalid-feedback">{error.department}</div>)}
+                                        {error.classroom && (<div className="invalid-feedback">{error.classroom}</div>)}
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="yearId">Year</label>
@@ -76,7 +80,7 @@ const AdminGetAllSubjects = () => {
                                         </div>
                                     </div>
                                     {!isLoading && <button type="submit" className="btn btn-info btn-block  ">Search</button>}
-                                   
+
                                 </form>
 
 
@@ -111,7 +115,7 @@ const AdminGetAllSubjects = () => {
                     </div>
                 </> : (history.push('/'))}
             </div>
-            
+
         </div>
     )
 }

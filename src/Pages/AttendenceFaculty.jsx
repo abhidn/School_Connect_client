@@ -10,9 +10,9 @@ const AttendenceFaculty = () => {
     const store = useSelector((store) => store)
     const history = useHistory()
     const dispatch = useDispatch()
-    const [department, setDepartment] = useState("")
+    const [classroom, setDepartment] = useState("")
     const [year, setYear] = useState("")
-    const [section, setSection] = useState("")
+    const [division, setSection] = useState("")
     const [subjectCode, setSubjectCode] = useState("")
     const [checkedValue, setCheckedValue] = useState([])
     const [error, setError] = useState({})
@@ -43,7 +43,7 @@ const AttendenceFaculty = () => {
     const formHandler = (e) => {
         e.preventDefault()
         setIsLoading(true)
-        dispatch(fetchStudents(department, year, section))
+        dispatch(fetchStudents(classroom, year, division))
        
     }
 
@@ -59,7 +59,7 @@ const AttendenceFaculty = () => {
     const secondFormHandler = (e) => {
         e.preventDefault()
         setIsLoading2(true)
-        dispatch(markAttendence(checkedValue, subjectCode, department, year, section))
+        dispatch(markAttendence(checkedValue, subjectCode, classroom, year, division))
         setCheckedValue([])
         
     }
@@ -79,16 +79,16 @@ const AttendenceFaculty = () => {
                     <div className="col-md-4">
                         <form noValidate onSubmit={formHandler}>
                             <div className="form-group">
-                                <label htmlFor="branchId">Department</label>
+                                <label htmlFor="branchId">classroom</label>
                                 <select onChange={(e) => setDepartment(e.target.value)} className={classnames("form-control",
                                     {
-                                        'is-invalid': error.department
+                                        'is-invalid': error.classroom
 
                                     })} id="branchId">
                                     <option>Select</option>
-                                    <option value={store.faculty.faculty.faculty.department}>{store.faculty.faculty.faculty.department}</option>
+                                    <option value={store.faculty.faculty.faculty.classroom}>{store.faculty.faculty.faculty.classroom}</option>
                                 </select>
-                                {error.department && (<div classNameName="invalid-feedback">{error.department}</div>)}
+                                {error.classroom && (<div classNameName="invalid-feedback">{error.classroom}</div>)}
                             </div>
                             <div className="form-group">
                                 <label htmlFor="yearId">Year</label>
@@ -108,10 +108,10 @@ const AttendenceFaculty = () => {
                             </div>
                            
                             <div className="form-group">
-                                <label htmlFor="sectionId">Section</label>
+                                <label htmlFor="sectionId">division</label>
                                 <select onChange={(e) => setSection(e.target.value)} className={classnames("form-control",
                                     {
-                                        'is-invalid': error.section
+                                        'is-invalid': error.division
 
                                     })} id="sectionId">
                                     <option>Select</option>
@@ -122,7 +122,7 @@ const AttendenceFaculty = () => {
                                     <option value="E">E</option>
                                     <option value="F">F</option>
                                 </select>
-                                {error.section && (<div classNameName="invalid-feedback">{error.section}</div>)}
+                                {error.division && (<div classNameName="invalid-feedback">{error.division}</div>)}
                             </div>
                             <div class="row justify-content-center">
                                 <div class="col-md-1">

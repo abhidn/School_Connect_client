@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import HomeHelper from '../Components/HomeHelper'
 import { useSelector, useDispatch } from 'react-redux'
-import { sendMessage, getPrivateConversation, getPrivateConversation2} from '../redux/action/studentAction'
+import { sendMessage, getPrivateConversation, getPrivateConversation2 } from '../redux/action/studentAction'
 import io from 'socket.io-client';
 import { useHistory } from 'react-router-dom';
-
+// import Dateandtime from './DateandTime'
 //Swap HelperFunction
 function swap(input, value_1, value_2) {
     var temp = input[value_1];
@@ -17,7 +17,7 @@ let socket;
 
 
 const Chat = (props) => {
-    
+
     const store = useSelector((store) => store)
     const history = useHistory()
     const dispatch = useDispatch()
@@ -27,7 +27,9 @@ const Chat = (props) => {
     const [message, setMessage] = useState("")
     const [messageArray, setMessageArray] = useState([])
     const [olderMessages, setOlderMessages] = useState([])
-    const ENDPOINT = 'https://apna-erp.herokuapp.com'
+    const ENDPOINT = 'http://localhost:5000/api'
+    // http://localhost:5000/api/student/getStudentByName
+    // const ENDPOINT = 'https://apna-erp.herokuapp.com'
 
     useEffect(() => {
         let temp = props.match.params.room
@@ -39,7 +41,7 @@ const Chat = (props) => {
         let tempRoom2 = tempArr[0] + '.' + tempArr[1]
         setRoom2(tempRoom2)
     }, [ENDPOINT, props.match.params.room])
-    
+
 
     useEffect(() => {
         dispatch(getPrivateConversation(room1))
@@ -58,8 +60,12 @@ const Chat = (props) => {
         }
     }, [room1, room2])
 
+    const Dateandtime = (obj) => {
+        const startTime = new Date(obj.createdAt);
+        let text = startTime.toString();
+        return <>{text.substr(0, text.length-30)}</>
+    }
 
-    
     const formHandler = (e) => {
         e.preventDefault()
         if (message.trim().length > 0) {
@@ -77,7 +83,7 @@ const Chat = (props) => {
                 senderRegistrationNumber: store.student.student.student.registrationNumber,
                 receiverRegistrationNumber
             }
-            dispatch(sendMessage(room1,messageObj))
+            dispatch(sendMessage(room1, messageObj))
         }
         else {
             alert("Can't send empty message")
@@ -90,9 +96,17 @@ const Chat = (props) => {
             setOlderMessages(store.student.privateChat)
             setMessageArray([...messageArray, data])
         })
-        
-    },[messageArray,olderMessages])
-   
+
+    }, [messageArray, olderMessages])
+    if (store.student.privateChat) {
+        console.log(store.student.privateChat)
+        console.log(store.student.privateChat.length)
+        for (let i = 0; i < store.student.privateChat.length; i++) {
+            var startTime = new Date(store.student.privateChat[i].createdAt);
+            console.log(startTime);
+
+        }
+    }
 
     return (
         <div>
@@ -111,9 +125,11 @@ const Chat = (props) => {
                         </div>
                         <div className="col-md-7">
                             {
-                                store.student.privateChat.map((obj,index) =>
+                                store.student.privateChat.map((obj, index) =>
                                     <div key={index}>
-                                        <p>{obj.senderName}: {obj.message}, {obj.createdAt}</p>
+                                        <p>{obj.senderName}: {obj.message},{Dateandtime(obj)}</p>
+                                        
+
                                     </div>
                                 )
                             }
@@ -127,7 +143,7 @@ const Chat = (props) => {
 
                 </div>
             </> : (history.push('/'))}
-            
+
         </div>
     )
 }
