@@ -4,6 +4,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import { studentLogout, newerChats, previousChats } from '../redux/action/studentAction'
 import '../stylesheets/navbar.css'
 // import { FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
 
 import Libarary from '../Pages/Student/Libarary'
 const Home = () => {
@@ -33,8 +38,8 @@ const Home = () => {
                     <ul>
 
                         <li>
-                            <a href="#"><h1>Sou. Tarabai Madhavrao Mohite Vidyalaya Rethare Bk</h1></a>
-                            <p className='para'><p></p> 56C7+4MJ, Dharme Patil Wada, Rethare bk., Maharashtra 415108</p>
+                            <a href="#" style={{fontFamily:"roboto"}}><h1>Sou. Tarabai Madhavrao Mohite Vidyalaya Rethare Bk</h1></a>
+                            <p className='para' style={{fontFamily:"roboto"}}><p></p>Dharme Patil Wada, Rethare bk., Maharashtra 415108</p>
                            
                         </li>
                         {/* <li>
@@ -55,7 +60,7 @@ const Home = () => {
 
 
 
-            <div className="container-fluid">
+            {/* <div className="container-fluid">
                 <div className="row">
                     <div className="col">
                         <nav className="navbar navbar-expand-lg navbar-light  bg-light">
@@ -102,7 +107,34 @@ const Home = () => {
                         </nav>
                     </div>
                 </div>
-            </div>
+            </div> */}
+            <Navbar bg="dark" expand="lg" style={{width:"100%"}}>
+      {/* <Container> */}
+        <Navbar.Brand href="#home" style={{color:"white",marginLeft:"50px",fontSize:"22px"}}>STMMV</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#home" style={{color:"white",marginLeft:"40px",fontSize:"20px"}}>Home</Nav.Link>
+            <Nav.Link href="#link" style={{color:"white",marginLeft:"40px",fontSize:"20px"}}>Link</Nav.Link>
+            <NavDropdown title="Academic" id="basic-nav-dropdown" style={{marginLeft:"40px",fontSize:"20px"}}>
+              <NavDropdown.Item href="/student/testPerformance">Test Performance</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Attendance
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Student Subject List</NavDropdown.Item>
+              
+              
+            </NavDropdown>
+            <Nav.Link href="/studentDetails" style={{color:"white",marginLeft:"40px",fontSize:"20px"}} >Students</Nav.Link>
+            <Nav.Link href="/studentDetails" style={{color:"white",marginLeft:"40px",fontSize:"20px",width:"220px"}}>New Conversation</Nav.Link>
+            <Nav.Link href="/student/updatePassword" style={{color:"white",marginLeft:"10px",fontSize:"20px",width:"220px"}}>Update Password</Nav.Link>
+            <Nav.Link href="/books" style={{color:"white",marginLeft:"10px",fontSize:"20px"}}>Library</Nav.Link>
+            {/* <Nav.Link href="#home"  style={{marginLeft: "200px", color:"white", fontSize:"20px"}}>Logout</Nav.Link> */}
+            <button style={{ listStyle: "none" ,marginLeft: "200px", color:"white", fontSize:"2px"}} onClick={logoutHandler} type="button" className="btn"><li>LOGOUT</li></button>
+          </Nav>
+        </Navbar.Collapse>
+      {/* </Container> */}
+    </Navbar>
         </>
     )
 }
