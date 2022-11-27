@@ -6,7 +6,8 @@ body {
   }
   
   .student-profile .card {
-    border-radius: 10px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px grey !important;
   }
   
   .student-profile .card .card-header .profile_img {
@@ -33,4 +34,19 @@ body {
     font-size: 14px;
     padding: 5px 10px;
     color: #000;
+  }
+
+  /* .col-lg-8 {
+    border-color: red;
+    color: red;
+    border-style: dashed;
+  } */
+
+  .card {
+    border-color: black;
+    
+  }
+
+  .table-bordered {
+    border-color: red !important;
   }

@@ -24,8 +24,8 @@ const Home = () => {
                                     <div className="card" style={{ width: "18rem" }}>
                                         <img className="card-img-top" src={store.student.student.student.avatar} alt="Card image cap" />
                                         <div className="card-body">
-                                            <h5 className="card-title">{store.student.student.student.name}</h5>
-                                            <h5 className="card-title">{store.student.student.student.registrationNumber}</h5>
+                                            <b className="card-title">{store.student.student.student.name}</b>
+                                            <b className="card-title">{store.student.student.student.registrationNumber}</b>
                                             <Link to='/student/updateProfile'>UPDATE PROFILE</Link>
                                         </div>
                                     </div>
@@ -106,16 +106,17 @@ const Home = () => {
                 <div class="student-profile py-4">
                     <div class="container">
                         <div class="row">
-                            <div class="col-lg-4">
-                                <div class="card shadow-sm">
+                            <div class="col-lg-4" >
+                                <div class="card shadow-sm" style={{paddingBottom:"48px"}}>
                                     <div class="card-header bg-transparent text-center">
                                         <img class="profile_img" src="https://placeimg.com/640/480/arch/any" alt="" />
-                                        <h3>{store.student.student.student.name}</h3>
+                                        <br></br>
+                                        <b style={{fontFamily:"roboto",fontSize:"20px"}}>{store.student.student.student.name}</b>
                                     </div>
                                     <div class="card-body">
-                                        <p class="mb-0"><strong class="pr-1">Student ID:</strong>{store.student.student.student.registrationNumber}</p>
-                                        <p class="mb-0"><strong class="pr-1">Class:</strong>{store.student.student.student.classroom}</p>
-                                        <p class="mb-0"><strong class="pr-1">Section:</strong>{store.student.student.student.division}</p>
+                                        <p class="mb-0"><b class="pr-1" style={{fontWeight:"bold",fontFamily:"roboto",fontSize:"18px"}}>Student ID:</b>{store.student.student.student.registrationNumber}</p>
+                                        <p class="mb-0" style={{textTransform:"capitalize"}}><b class="pr-1" style={{fontWeight:"bold",fontFamily:"roboto",fontSize:"18px"}}>Class:</b>{store.student.student.student.classroom}</p>
+                                        <p class="mb-0"><b class="pr-1" style={{fontWeight:"bold",fontFamily:"roboto",fontSize:"18px"}}>Section:</b>{store.student.student.student.division}</p>
                                         <p class="mb-0"><i class="fa fa-pencil-square-o" aria-hidden="true"></i><Link to='/student/updateProfile'> Update Profile</Link></p>
                                         
                                     </div>
@@ -124,53 +125,53 @@ const Home = () => {
                             <div class="col-lg-8">
                                 <div class="card shadow-sm">
                                     <div class="card-header bg-transparent border-0">
-                                        <h3 class="mb-0"><i class="fa fa-clone" aria-hidden="true"></i> General Information</h3>
+                                        <b class="mb-0" style={{fontFamily:"roboto",fontSize:"20px"}}><i class="fa fa-clone" aria-hidden="true"></i> General Information</b>
                                     </div>
                                     <div class="card-body pt-0">
                                         <table class="table table-bordered">
                                             <tr>
-                                                <th width="30%">Date Of Birth</th>
+                                                <th width="30%" style={{fontFamily:"roboto",fontSize:"16px"}}>Date Of Birth</th>
                                                 <td width="2%">:</td>
                                                 <td>{store.student.student.student.dob}</td>
                                             </tr>
                                             <tr>
-                                                <th width="30%">Academic Year	</th>
+                                                <th width="30%" style={{fontFamily:"roboto",fontSize:"16px"}}>Academic Year	</th>
                                                 <td width="2%">:</td>
                                                 <td>{store.student.student.student.year}</td>
                                             </tr>
                                             <tr>
-                                                <th width="30%">Gender</th>
+                                                <th width="30%" style={{fontFamily:"roboto",fontSize:"16px"}}>Gender</th>
                                                 <td width="2%">:</td>
                                                 <td>{store.student.student.student.gender ? store.student.student.student.gender :"NA"}</td>
                                             </tr>
                                             <tr>
-                                                <th width="30%">Email</th>
+                                                <th width="30%" style={{fontFamily:"roboto",fontSize:"16px"}}>Email</th>
                                                 <td width="2%">:</td>
                                                 <td>{store.student.student.student.email}</td>
                                             </tr>
                                             <tr>
-                                                <th width="30%">Batch</th>
+                                                <th width="30%" style={{fontFamily:"roboto",fontSize:"16px"}}>Batch</th>
                                                 <td width="2%">:</td>
                                                 <td>{store.student.student.student.batch}</td>
                                             </tr>
                                             <tr>
-                                                <th width="30%">Contact Number</th>
+                                                <th width="30%" style={{fontFamily:"roboto",fontSize:"16px"}}>Contact Number</th>
                                                 <td width="2%">:</td>
                                                 <td>{store.student.student.student.studentMobileNumber ?
                                                     store.student.student.student.studentMobileNumber : "NA"}</td>
                                             </tr>
                                             <tr>
-                                                <th width="30%">Adhar number</th>
+                                                <th width="30%" style={{fontFamily:"roboto",fontSize:"16px"}}>Adhar number</th>
                                                 <td width="2%">:</td>
                                                 <td>{store.student.student.student.aadharCard ? store.student.student.student.aadharCard : "NA"}</td>
                                             </tr>
                                             <tr>
-                                                <th width="30%">Father Name</th>
+                                                <th width="30%" style={{fontFamily:"roboto",fontSize:"16px"}}>Father Name</th>
                                                 <td width="2%">:</td>
                                                 <td>{store.student.student.student.fatherName ? store.student.student.student.fatherName : "NA" }</td>
                                             </tr>
                                             <tr>
-                                                <th width="30%">Father Number</th>
+                                                <th width="30%" style={{fontFamily:"roboto",fontSize:"16px"}}>Father Number</th>
                                                 <td width="2%">:</td>
                                                 <td>{store.student.student.student.fatherMobileNumber ? store.student.student.student.fatherMobileNumber : "NA"}</td>
                                             </tr>

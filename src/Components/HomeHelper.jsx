@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { studentLogout, newerChats, previousChats } from '../redux/action/studentAction'
 import '../stylesheets/navbar.css'
-import { FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa';
+// import { FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa';
 
 import Libarary from '../Pages/Student/Libarary'
 const Home = () => {
@@ -37,7 +37,7 @@ const Home = () => {
                             <p className='para'><p></p> 56C7+4MJ, Dharme Patil Wada, Rethare bk., Maharashtra 415108</p>
                            
                         </li>
-                        <li>
+                        {/* <li>
                             <a href="#"><FaFacebook /></a>
 
                         </li>
@@ -48,7 +48,7 @@ const Home = () => {
                         <li>
                             <a href="#"><FaTwitter /></a>
 
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
             </nav>
