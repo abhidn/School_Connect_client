@@ -1,13 +1,195 @@
-
 [
-  {
-    "title": "Maharastra Board 10th Standard Kumarbharti Book",
-    "Std": "10th",
-    "Medium": "Marathi",
-    "imageLink": "https://www.shaalaa.com/images/marathi-kumarbharati-10th-standard-ssc-maharashtra-state-board-mraathi-kumaarbhaarti-iyttaa-10-vi_6:a847c852d6294d578f110526416d7568.jpg",
-    "link": "https://drive.google.com/file/d/1td8HPe_Dg_ytmC0TGnJXyFeQIqyQa7vs/view?usp=drivesdk\n"
-    
-  }
-
-]
-
+    {
+      "title": "MARATHI",
+      "Std": "10th",
+      "Medium": "Marathi",
+      "imageLink": "https://www.shaalaa.com/images/marathi-kumarbharati-10th-standard-ssc-maharashtra-state-board-mraathi-kumaarbhaarti-iyttaa-10-vi_6:a847c852d6294d578f110526416d7568.jpg",
+      "link": "https://drive.google.com/file/d/1td8HPe_Dg_ytmC0TGnJXyFeQIqyQa7vs/view?usp=drivesdk\n"
+      
+    },
+    {
+      "title": "SCIENCE",
+      "Std": "10th",
+      "Medium": "English",
+      "imageLink": "https://www.shaalaa.com/images/science-and-tech-part-1-10th-standard-ssc-maharashtra-state-board_6:c9a4ae86c3724b9b8c519cd188fdfa1f.jpg",
+      "link": "https://drive.google.com/file/d/1EhbhxXrJGJ-sCa1uhKKTBSsGCb3FHNKe/view?usp=drivesdk\n"
+      
+    },
+    {
+      "title": "SANSKRIT",
+      "Std": "10th",
+      "Medium": "Sanskrit",
+      "imageLink": "https://m.media-amazon.com/images/I/914dF+w-XWL.jpg",
+      "link": "https://drive.google.com/file/d/18UPmMZ5gHztSOuR0useQwZBqmgO_AXtm/view?usp=drivesdk\n"
+      
+    },
+    {
+      "title": "MATHEMATICS",
+      "Std": "10th",
+      "Medium": "English",
+      "imageLink": "https://www.shaalaa.com/images/mathematics-1-algebra-10th-standard-ssc-maharashtra-state-board_6:3c1a2739ef74455990da08f3e1b1d605.png",
+      "link": "https://drive.google.com/file/d/1wW5j9FkC0mu5j2ffkujltrWpvDUTsIVA/view?usp=drivesdk\n"
+      
+    },
+    {
+      "title": "MARATHI",
+      "Std": "9th",
+      "Medium": "Marathi",
+      "imageLink": "https://www.shaalaa.com/images/marathi-kumarbharati-10th-standard-ssc-maharashtra-state-board-mraathi-kumaarbhaarti-iyttaa-10-vi_6:a847c852d6294d578f110526416d7568.jpg",
+      "link": "https://drive.google.com/file/d/1td8HPe_Dg_ytmC0TGnJXyFeQIqyQa7vs/view?usp=drivesdk\n"
+      
+    },
+    {
+      "title": "SCIENCE",
+      "Std": "9th",
+      "Medium": "English",
+      "imageLink": "https://www.shaalaa.com/images/science-and-tech-part-1-10th-standard-ssc-maharashtra-state-board_6:c9a4ae86c3724b9b8c519cd188fdfa1f.jpg",
+      "link": "https://drive.google.com/file/d/1EhbhxXrJGJ-sCa1uhKKTBSsGCb3FHNKe/view?usp=drivesdk\n"
+      
+    },
+    {
+      "title": "SANSKRIT",
+      "Std": "9th",
+      "Medium": "Sanskrit",
+      "imageLink": "https://m.media-amazon.com/images/I/914dF+w-XWL.jpg",
+      "link": "https://drive.google.com/file/d/18UPmMZ5gHztSOuR0useQwZBqmgO_AXtm/view?usp=drivesdk\n"
+      
+    },
+    {
+      "title": "MATHEMATICS",
+      "Std": "9th",
+      "Medium": "English",
+      "imageLink": "https://www.shaalaa.com/images/mathematics-1-algebra-10th-standard-ssc-maharashtra-state-board_6:3c1a2739ef74455990da08f3e1b1d605.png",
+      "link": "https://drive.google.com/file/d/1wW5j9FkC0mu5j2ffkujltrWpvDUTsIVA/view?usp=drivesdk\n"
+      
+    },
+    {
+      "title": "MARATHI",
+      "Std": "8th",
+      "Medium": "Marathi",
+      "imageLink": "https://www.shaalaa.com/images/marathi-kumarbharati-10th-standard-ssc-maharashtra-state-board-mraathi-kumaarbhaarti-iyttaa-10-vi_6:a847c852d6294d578f110526416d7568.jpg",
+      "link": "https://drive.google.com/file/d/1td8HPe_Dg_ytmC0TGnJXyFeQIqyQa7vs/view?usp=drivesdk\n"
+      
+    },
+    {
+      "title": "SCIENCE",
+      "Std": "8th",
+      "Medium": "English",
+      "imageLink": "https://www.shaalaa.com/images/science-and-tech-part-1-10th-standard-ssc-maharashtra-state-board_6:c9a4ae86c3724b9b8c519cd188fdfa1f.jpg",
+      "link": "https://drive.google.com/file/d/1EhbhxXrJGJ-sCa1uhKKTBSsGCb3FHNKe/view?usp=drivesdk\n"
+      
+    },
+    {
+      "title": "SANSKRIT",
+      "Std": "8th",
+      "Medium": "Sanskrit",
+      "imageLink": "https://m.media-amazon.com/images/I/914dF+w-XWL.jpg",
+      "link": "https://drive.google.com/file/d/18UPmMZ5gHztSOuR0useQwZBqmgO_AXtm/view?usp=drivesdk\n"
+      
+    },
+    {
+      "title": "MATHEMATICS",
+      "Std": "8th",
+      "Medium": "English",
+      "imageLink": "https://www.shaalaa.com/images/mathematics-1-algebra-10th-standard-ssc-maharashtra-state-board_6:3c1a2739ef74455990da08f3e1b1d605.png",
+      "link": "https://drive.google.com/file/d/1wW5j9FkC0mu5j2ffkujltrWpvDUTsIVA/view?usp=drivesdk\n"
+      
+    },
+    {
+      "title": "MARATHI",
+      "Std": "7th",
+      "Medium": "Marathi",
+      "imageLink": "https://www.shaalaa.com/images/marathi-kumarbharati-10th-standard-ssc-maharashtra-state-board-mraathi-kumaarbhaarti-iyttaa-10-vi_6:a847c852d6294d578f110526416d7568.jpg",
+      "link": "https://drive.google.com/file/d/1td8HPe_Dg_ytmC0TGnJXyFeQIqyQa7vs/view?usp=drivesdk\n"
+      
+    },
+    {
+      "title": "SCIENCE",
+      "Std": "7th",
+      "Medium": "English",
+      "imageLink": "https://www.shaalaa.com/images/science-and-tech-part-1-10th-standard-ssc-maharashtra-state-board_6:c9a4ae86c3724b9b8c519cd188fdfa1f.jpg",
+      "link": "https://drive.google.com/file/d/1EhbhxXrJGJ-sCa1uhKKTBSsGCb3FHNKe/view?usp=drivesdk\n"
+      
+    },
+    {
+      "title": "SANSKRIT",
+      "Std": "7th",
+      "Medium": "Sanskrit",
+      "imageLink": "https://m.media-amazon.com/images/I/914dF+w-XWL.jpg",
+      "link": "https://drive.google.com/file/d/18UPmMZ5gHztSOuR0useQwZBqmgO_AXtm/view?usp=drivesdk\n"
+      
+    },
+    {
+      "title": "MATHEMATICS",
+      "Std": "7th",
+      "Medium": "English",
+      "imageLink": "https://www.shaalaa.com/images/mathematics-1-algebra-10th-standard-ssc-maharashtra-state-board_6:3c1a2739ef74455990da08f3e1b1d605.png",
+      "link": "https://drive.google.com/file/d/1wW5j9FkC0mu5j2ffkujltrWpvDUTsIVA/view?usp=drivesdk\n"
+      
+    },
+    {
+      "title": "MARATHI",
+      "Std": "6th",
+      "Medium": "Marathi",
+      "imageLink": "https://www.shaalaa.com/images/marathi-kumarbharati-10th-standard-ssc-maharashtra-state-board-mraathi-kumaarbhaarti-iyttaa-10-vi_6:a847c852d6294d578f110526416d7568.jpg",
+      "link": "https://drive.google.com/file/d/1td8HPe_Dg_ytmC0TGnJXyFeQIqyQa7vs/view?usp=drivesdk\n"
+      
+    },
+    {
+      "title": "SCIENCE",
+      "Std": "6th",
+      "Medium": "English",
+      "imageLink": "https://www.shaalaa.com/images/science-and-tech-part-1-10th-standard-ssc-maharashtra-state-board_6:c9a4ae86c3724b9b8c519cd188fdfa1f.jpg",
+      "link": "https://drive.google.com/file/d/1EhbhxXrJGJ-sCa1uhKKTBSsGCb3FHNKe/view?usp=drivesdk\n"
+      
+    },
+    {
+      "title": "SANSKRIT",
+      "Std": "6th",
+      "Medium": "Sanskrit",
+      "imageLink": "https://m.media-amazon.com/images/I/914dF+w-XWL.jpg",
+      "link": "https://drive.google.com/file/d/18UPmMZ5gHztSOuR0useQwZBqmgO_AXtm/view?usp=drivesdk\n"
+      
+    },
+    {
+      "title": "MATHEMATICS",
+      "Std": "6th",
+      "Medium": "English",
+      "imageLink": "https://www.shaalaa.com/images/mathematics-1-algebra-10th-standard-ssc-maharashtra-state-board_6:3c1a2739ef74455990da08f3e1b1d605.png",
+      "link": "https://drive.google.com/file/d/1wW5j9FkC0mu5j2ffkujltrWpvDUTsIVA/view?usp=drivesdk\n"
+      
+    },
+    {
+      "title": "MARATHI",
+      "Std": "5th",
+      "Medium": "Marathi",
+      "imageLink": "https://www.shaalaa.com/images/marathi-kumarbharati-10th-standard-ssc-maharashtra-state-board-mraathi-kumaarbhaarti-iyttaa-10-vi_6:a847c852d6294d578f110526416d7568.jpg",
+      "link": "https://drive.google.com/file/d/1td8HPe_Dg_ytmC0TGnJXyFeQIqyQa7vs/view?usp=drivesdk\n"
+      
+    },
+    {
+      "title": "SCIENCE",
+      "Std": "5th",
+      "Medium": "English",
+      "imageLink": "https://www.shaalaa.com/images/science-and-tech-part-1-10th-standard-ssc-maharashtra-state-board_6:c9a4ae86c3724b9b8c519cd188fdfa1f.jpg",
+      "link": "https://drive.google.com/file/d/1EhbhxXrJGJ-sCa1uhKKTBSsGCb3FHNKe/view?usp=drivesdk\n"
+      
+    },
+    {
+      "title": "SANSKRIT",
+      "Std": "5th",
+      "Medium": "Sanskrit",
+      "imageLink": "https://m.media-amazon.com/images/I/914dF+w-XWL.jpg",
+      "link": "https://drive.google.com/file/d/18UPmMZ5gHztSOuR0useQwZBqmgO_AXtm/view?usp=drivesdk\n"
+      
+    },
+    {
+      "title": "MATHEMATICS",
+      "Std": "5th",
+      "Medium": "English",
+      "imageLink": "https://www.shaalaa.com/images/mathematics-1-algebra-10th-standard-ssc-maharashtra-state-board_6:3c1a2739ef74455990da08f3e1b1d605.png",
+      "link": "https://drive.google.com/file/d/1wW5j9FkC0mu5j2ffkujltrWpvDUTsIVA/view?usp=drivesdk\n"
+      
+    }
+  
+  ]

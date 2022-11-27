@@ -39,24 +39,26 @@ const AdminGetAllFaculty = () => {
                         <div className="col-md-4">
                             <form noValidate onSubmit={formHandler}>
                                 <div className="form-group">
-                                    <label htmlFor="departmentId">classroom</label>
+                                    <label htmlFor="departmentId">Standard</label>
+                                    {/* <label htmlFor="departmentId">classroom</label> */}
                                     <select onChange={(e) => setDepartment(e.target.value)} className={classnames("form-control",
                                         {
                                             'is-invalid': error.classroom
                                         })} id="departmentId">
                                         <option>Select</option>
                                         
-                                        <option value="five">Five</option>
+                                        <option value="five">five</option>
                                                 <option value="six">Six</option>
                                                 <option value="seven">Seven</option>
                                                 <option value="eight">Eight</option>
-                                                <option value="Nine">Nine</option>
+                                                <option value="nine">Nine</option>
                                                 <option value="ten">Ten</option>
                                     </select>
                                     {error.classroom && (<div className="invalid-feedback">{error.classroom}</div>)}
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="yearId">Year</label>
+                                    <label htmlFor="yearId">Batch</label>
+                                    {/* <label htmlFor="yearId">Year</label> */}
                                     <select onChange={(e) => setYear(e.target.value)} className={classnames("form-control",
                                         {
                                             'is-invalid': error.year
