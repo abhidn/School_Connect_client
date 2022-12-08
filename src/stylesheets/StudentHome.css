@@ -4,9 +4,12 @@ body {
     font-family: 'Lato', sans-serif;
     color: #000;
   }
-  
+  /* .student-profile{
+    padding-top: 80px !important;
+  } */
   .student-profile .card {
     border-radius: 10px;
+    box-shadow: 5px 5px 5px grey !important;
   }
   
   .student-profile .card .card-header .profile_img {
@@ -33,4 +36,12 @@ body {
     font-size: 14px;
     padding: 5px 10px;
     color: #000;
+  }
+  .card {
+    border-color: black;
+    
+  }
+
+  .table-bordered {
+    border-color: red !important;
   }

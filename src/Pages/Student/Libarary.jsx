@@ -109,11 +109,12 @@ function JsonDataDisplay() {
           <HomeHelper />
           <div className="ShowBookList">
             <div className="container">
-              <div className="list">
+              <div className="list" >
                 {bookList}
               </div>
             </div>
           </div>
+
         </> : (history.push('/'))}
     </>
 

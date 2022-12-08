@@ -5,6 +5,9 @@ import HomeHelper from '../../Components/HomeHelper'
 import { useHistory } from 'react-router-dom'
 
 import '../../stylesheets/test.css'
+import { BarChart, Bar, CartesianGrid, XAxis, YAxis } from 'recharts';
+
+
 
 const StudentTestPerformance = () => {
     const store = useSelector(store => store)
@@ -25,24 +28,51 @@ const StudentTestPerformance = () => {
             sum1 += store.student.allMarks.CycleTest1[i].marks;
             Total_sum1 += store.student.allMarks.CycleTest1[i].totalMarks;
         }
-        console.log(sum1);
-        console.log(Total_sum1);
+        // console.log(sum1);
+        // console.log(Total_sum1);
     }
     if (store.student.allMarks.CycleTest2) {
         for (let i = 0; i < store.student.allMarks.CycleTest2.length; i++) {
             sum2 += store.student.allMarks.CycleTest2[i].marks;
             Total_sum2 += store.student.allMarks.CycleTest2[i].totalMarks;
         }
-        console.log(sum2);
-        console.log(Total_sum2);
+        // console.log(sum2);
+        // console.log(Total_sum2);
     }
+    if (store.student.allMarks.Semester) {
+        for (let i = 0; i < store.student.allMarks.Semester.length; i++) {
+            sum += store.student.allMarks.Semester[i].marks;
+            Total_sum += store.student.allMarks.Semester[i].totalMarks;
+        }
+        // console.log(sum);
+        // console.log(Total_sum);
+    }
+    console.log("harshal")
+    console.log(store.student.allMarks.Semester)
+
+
+    // Graphical Representation
+    const data1 = [];
+    console.log(store.student.allMarks.CycleTest1)
+    if (store.student.allMarks.CycleTest1) {
+        for (let i = 0; i < store.student.allMarks.CycleTest1.length; i++) {
+            data1.push({ 'Subject': store.student.allMarks.CycleTest1[i].subject.subjectName, "Marks": store.student.allMarks.CycleTest1[i].marks });
+        }
+
+    }
+    const data2 = [];
     if (store.student.allMarks.CycleTest2) {
         for (let i = 0; i < store.student.allMarks.CycleTest2.length; i++) {
-            sum += store.student.allMarks.CycleTest2[i].marks;
-            Total_sum += store.student.allMarks.CycleTest2[i].totalMarks;
+            data2.push({ 'Subject': store.student.allMarks.CycleTest2[i].subject.subjectName, "Marks": store.student.allMarks.CycleTest2[i].marks });
         }
-        console.log(sum);
-        console.log(Total_sum);
+
+    }
+    const data3 = [];
+    if (store.student.allMarks.Semester) {
+        for (let i = 0; i < store.student.allMarks.Semester.length; i++) {
+            data3.push({ 'Subject': store.student.allMarks.Semester[i].subject.subjectName, "Marks": store.student.allMarks.Semester[i].marks });
+        }
+
     }
 
     return (
@@ -92,7 +122,7 @@ const StudentTestPerformance = () => {
                                             }
                                         </tbody>
                                     </table></> : null}
-                                <p>Total Percentage: {((sum1) * 100 / Total_sum1)}%</p>
+                                <p style={{ color: "black" }}>Total Percentage: {((sum1) * 100 / Total_sum1)}%</p>
                             </div>
                         </div>
 
@@ -132,7 +162,7 @@ const StudentTestPerformance = () => {
                                             }
                                         </tbody>
                                     </table></> : null}
-                                <p>Total Percentage: {((sum2) * 100 / Total_sum2)}%</p>
+                                <p style={{ color: "black" }}>Total Percentage: {((sum2) * 100 / Total_sum2)}%</p>
                             </div>
                         </div>
                     }
@@ -169,12 +199,33 @@ const StudentTestPerformance = () => {
                                             }
                                         </tbody>
                                     </table></> : null}
-                                    <p>Total Percentage: {((sum) * 100 / Total_sum)}%</p>
+                                <p style={{ color: "black" }}>Total Percentage: {((sum) * 100 / Total_sum)}%</p>
                             </div>
                         </div>
 
                     }
-                </div></> : (history.push('/'))}
+                </div>
+                <BarChart width={300} height={400} data={data1}>
+                    <Bar dataKey="Marks" fill="#344D67" />
+                    <CartesianGrid stroke="#ccc" />
+                    <XAxis dataKey="Subject" />
+                    <YAxis />
+                </BarChart>
+
+                <BarChart width={300} height={400} data={data2}>
+                    <Bar dataKey="Marks" fill="green" />
+                    <CartesianGrid stroke="#ccc" />
+                    <XAxis dataKey="Subject" />
+                    <YAxis />
+                </BarChart>
+
+                <BarChart width={300} height={400} data={data3}>
+                    <Bar dataKey="Marks" fill="#344D67" />
+                    <CartesianGrid stroke="#ccc" />
+                    <XAxis dataKey="Subject" />
+                    <YAxis />
+                </BarChart>
+            </> : (history.push('/'))}
 
         </>
 

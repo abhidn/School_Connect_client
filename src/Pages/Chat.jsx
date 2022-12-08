@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { sendMessage, getPrivateConversation, getPrivateConversation2 } from '../redux/action/studentAction'
 import io from 'socket.io-client';
 import { useHistory } from 'react-router-dom';
+import "../stylesheets/chat.css"
 // import Dateandtime from './DateandTime'
 //Swap HelperFunction
 function swap(input, value_1, value_2) {
@@ -27,7 +28,8 @@ const Chat = (props) => {
     const [message, setMessage] = useState("")
     const [messageArray, setMessageArray] = useState([])
     const [olderMessages, setOlderMessages] = useState([])
-    const ENDPOINT = 'http://localhost:5000/api'
+    // const ENDPOINT = '"http://localhost"'
+    const ENDPOINT = 'http://localhost:5000'
     // http://localhost:5000/api/student/getStudentByName
     // const ENDPOINT = 'https://apna-erp.herokuapp.com'
 
@@ -63,11 +65,11 @@ const Chat = (props) => {
     const Dateandtime = (obj) => {
         const startTime = new Date(obj.createdAt);
         let text = startTime.toString();
-        return <>{text.substr(0, text.length-30)}</>
+        return <>{text.substr(0, text.length - 30)}</>
     }
 
     const formHandler = (e) => {
-        e.preventDefault()
+        // e.preventDefault()
         if (message.trim().length > 0) {
             socket.emit("private message", {
                 sender: store.student.student.student.name,
@@ -89,7 +91,7 @@ const Chat = (props) => {
             alert("Can't send empty message")
         }
     }
-
+    console.log(store.student.student.student.name);
 
     useEffect(() => {
         socket.on("new Message", (data) => {
@@ -99,37 +101,56 @@ const Chat = (props) => {
 
     }, [messageArray, olderMessages])
     if (store.student.privateChat) {
-        console.log(store.student.privateChat)
-        console.log(store.student.privateChat.length)
+        // console.log(store.student.privateChat)
+        // console.log(store.student.privateChat.length)
         for (let i = 0; i < store.student.privateChat.length; i++) {
             var startTime = new Date(store.student.privateChat[i].createdAt);
-            console.log(startTime);
+            // console.log(startTime);
 
         }
     }
-
+  
     return (
         <div>
             {store.student.isAuthenticated ? <>
                 <HomeHelper />
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-5">
-                            <form className="form-inline" onSubmit={formHandler}>
+                        <div className="col-md-4 " style={{ marginTop: "50px"}}>
+                            <form className="form" onSubmit={formHandler}>
                                 <div className="form-group ">
                                     {/* <input value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Type here.." type="text" className="form-control" /> */}
-                                    <textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Type here.." type="text" className="form-control" />
+                                    <textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Type here.." type="text" className="form-control" style={{height: "300px"}}/>
                                 </div>
-                                <button type="submit" className="btn btn-primary ml-1 ">Send</button>
+                                <div style={{textAlign:"right"}}>
+                                <button type="submit" className="btn btn-primary ml-1">Send</button>
+                                </div>
+                                
                             </form>
                         </div>
-                        <div className="col-md-7">
+                        <div className="scrollBar col-md-7" style={{ overflowY: "scroll", marginTop: "20px", height: "510px", border: "1px solid rgba(0, 0, 0, 0.05)" }}>
                             {
                                 store.student.privateChat.map((obj, index) =>
-                                    <div key={index}>
-                                        <p>{obj.senderName}: {obj.message},{Dateandtime(obj)}</p>
-                                        
+                                    <div key={index} >
+                                        {/* <p style={{ color: "black" }}>{obj.senderName}: {obj.message},{Dateandtime(obj)}</p> */}
+                                        <div class="chat-messages">
+                                            <div class="message-box-holder">
+                                                <div class="message-box">
+                                                {Dateandtime(obj)}
+                                                </div>
 
+                                            </div>
+
+                                            <div class="message-box-holder">
+                                                <div class="message-sender">
+                                                    {obj.senderName}
+                                                </div>
+                                                <div class="message-box message-partner">
+                                                    {obj.message}
+                                                </div>
+                                            </div>
+
+                                        </div>
                                     </div>
                                 )
                             }

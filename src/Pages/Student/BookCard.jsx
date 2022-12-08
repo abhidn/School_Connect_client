@@ -7,6 +7,7 @@ const BookCard = (props) => {
 
     return (
         <div className="card-container">
+
             <a href={book.link} target="_blank"> <img src={book.imageLink} alt="image" width="200" /></a>
 
             <div className="desc">

@@ -96,7 +96,7 @@ const StudentDetails = () => {
                                                 <option value="six">Six</option>
                                                 <option value="seven">Seven</option>
                                                 <option value="eight">Eight</option>
-                                                <option value="Nine">Nine</option>
+                                                <option value="nine">Nine</option>
                                                 <option value="ten">Ten</option>
 
                                             </select>
