@@ -73,9 +73,9 @@ const Home = () => {
                                     <li className="nav-item active" >
                                         <button type="button" className="btn" ><Link to="/home" style={{ color: "white", textDecoration: 'none', fontSize: "18px" }}><li>{finalname}</li></Link></button>
                                     </li>
-                                    <li className="nav-item">
+                                    {/* <li className="nav-item">
                                         <button type="button" className="btn"><Link to="/student/updateProfile" style={{ color: "white", textDecoration: 'none', fontSize: "18px" }}><li>Update Profile</li></Link></button>
-                                    </li>
+                                    </li> */}
                                     <li className="nav-item dropdown">
                                         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ color: "white", fontSize: "18px" }}>
                                             Academic </a>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { adminLogout } from '../redux/action/adminAction'
+import { FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa';
 
 
 const Home = () => {
@@ -20,9 +21,37 @@ const Home = () => {
         history.push('/')
     }
     return (
+        <>
+
+<nav>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl3Bp5kE232YWdc__a3O9XsvNdEkJ3uUEp1zXMZ6-jMtyG5-3tVU-8-_m_jfbhxdXl5uQ&usqp=CAU" alt="logo" srcset="" />
+                <div className='navigation'>
+                    <ul>
+
+                        <li>
+                            <a href="#"><h1>Sou. Tarabai Madhavrao Mohite Vidyalaya Rethare Bk</h1></a>
+                            <p className='para'><p></p> Near Dharme Patil Wada, Rethare bk , Tal-Karad , Dist-Satara , Maharashtra 415108</p>
+
+                        </li>
+                        <li>
+                            <a href="#"><FaFacebook /></a>
+
+                        </li>
+                        <li>
+                            <a href="#"><FaInstagram /></a>
+
+                        </li>
+                        <li>
+                            <a href="#"><FaTwitter /></a>
+
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
         <div className="container-fluid">
           
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <h4 className="navbar-brand mt-1" href="">STMMV</h4>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -58,11 +87,12 @@ const Home = () => {
                 </div>
                 <div>
 
-                    <button style={{ listStyle: "None" }} onClick={logoutHandler} type="button" className="btn"><li>LOGOUT</li></button>
+                    <button style={{ listStyle: "None" }} onClick={logoutHandler} type="button" className="btn1"><li>LOGOUT</li></button>
 
                 </div>
             </nav>
         </div>
+        </>
     )
 }
 

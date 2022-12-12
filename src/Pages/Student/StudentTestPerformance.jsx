@@ -88,7 +88,7 @@ const StudentTestPerformance = () => {
                             <div className="col-md-8 m-auto">
                                 {store.student.allMarks.CycleTest1.length !== 0 ? <>
                                     <div class="eleven">
-                                        <h2>Cycle Test 1</h2>
+                                        <h2>Unit Test 1</h2>
                                     </div>
 
 
@@ -124,7 +124,14 @@ const StudentTestPerformance = () => {
                                     </table></> : null}
                                 <p style={{ color: "black" }}>Total Percentage: {((sum1) * 100 / Total_sum1)}%</p>
                             </div>
+                            <BarChart width={200} height={300} data={data1}>
+                            <Bar dataKey="Marks" fill="#344D67" />
+                            <CartesianGrid stroke="#ccc" />
+                            <XAxis dataKey="Subject" />
+                            <YAxis />
+                            </BarChart>
                         </div>
+                        
 
 
                     }
@@ -134,9 +141,9 @@ const StudentTestPerformance = () => {
                             <div className="col-md-8 m-auto">
                                 {store.student.allMarks.CycleTest2.length !== 0 ? <>
                                     <div class="eleven">
-                                        <h2>Cycle Test 2</h2>
+                                        <h2>Unit Test 2</h2>
                                     </div>
-                                    <table className="table">
+                                    <table className="table border">
                                         <thead>
                                             <tr>
                                                 <th scope="col">S.No</th>
@@ -164,6 +171,12 @@ const StudentTestPerformance = () => {
                                     </table></> : null}
                                 <p style={{ color: "black" }}>Total Percentage: {((sum2) * 100 / Total_sum2)}%</p>
                             </div>
+                            <BarChart width={200} height={300} data={data2}>
+                            <Bar dataKey="Marks" fill="green" />
+                            <CartesianGrid stroke="#ccc" />
+                            <XAxis dataKey="Subject" />
+                            <YAxis />
+                            </BarChart>
                         </div>
                     }
 
@@ -171,8 +184,8 @@ const StudentTestPerformance = () => {
                         <div className="row mt-3">
                             <div className="col-md-8 m-auto">
                                 {store.student.allMarks.Semester.length !== 0 ? <>
-                                    <h4>Semester</h4>
-                                    <table className="table">
+                                    <h2>End Semester Exam</h2>
+                                    <table className="table border">
                                         <thead>
                                             <tr>
                                                 <th scope="col">S.No</th>
@@ -201,30 +214,21 @@ const StudentTestPerformance = () => {
                                     </table></> : null}
                                 <p style={{ color: "black" }}>Total Percentage: {((sum) * 100 / Total_sum)}%</p>
                             </div>
+                            <BarChart width={200} height={300} data={data3}>
+                            <Bar dataKey="Marks" fill="#344D67" />
+                            <CartesianGrid stroke="#ccc" />
+                            <XAxis dataKey="Subject" />
+                            <YAxis />
+                            </BarChart>
                         </div>
 
                     }
                 </div>
-                <BarChart width={300} height={400} data={data1}>
-                    <Bar dataKey="Marks" fill="#344D67" />
-                    <CartesianGrid stroke="#ccc" />
-                    <XAxis dataKey="Subject" />
-                    <YAxis />
-                </BarChart>
+                
 
-                <BarChart width={300} height={400} data={data2}>
-                    <Bar dataKey="Marks" fill="green" />
-                    <CartesianGrid stroke="#ccc" />
-                    <XAxis dataKey="Subject" />
-                    <YAxis />
-                </BarChart>
+                
 
-                <BarChart width={300} height={400} data={data3}>
-                    <Bar dataKey="Marks" fill="#344D67" />
-                    <CartesianGrid stroke="#ccc" />
-                    <XAxis dataKey="Subject" />
-                    <YAxis />
-                </BarChart>
+                
             </> : (history.push('/'))}
 
         </>

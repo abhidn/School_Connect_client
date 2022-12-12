@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {fetchAttendence} from '../redux/action/studentAction'
-
+import { BarChart, Bar, CartesianGrid, XAxis, YAxis } from 'recharts';
 import axios from 'axios'
 import HomeHelper from '../Components/HomeHelper'
 import { useHistory } from 'react-router-dom'
@@ -15,6 +15,16 @@ const Home = () => {
     useEffect(() => {
       dispatch(fetchAttendence())  
     },[])
+
+    const data3 = [];
+    if (store.student.attendence) {
+        for (let i = 0; i < store.student.attendence.length; i++) {
+            data3.push({ 'Subject': store.student.attendence[i].subjectName, "Percentage": store.student.attendence[i].attendence });
+        }
+
+    }
+    console.log(store.student.attendence[0])
+    console.log(data3)
 
     return (
         <div>
@@ -53,8 +63,16 @@ const Home = () => {
                                     }
                                 </tbody>
                             </table>
+                            
                         </div>
+                        <BarChart width={300} height={400} data={data3}>
+                            <Bar dataKey="Percentage" fill="#8B008B" />
+                            <CartesianGrid stroke="#ccc" />
+                            <XAxis dataKey="Subject" />
+                            <YAxis />
+                            </BarChart>
                     </div>
+                            
                 </div>
             </> : (history.push('/'))}
            

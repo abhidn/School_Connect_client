@@ -30,7 +30,7 @@
     text-align: center;
   
     box-shadow: 0 0 20px black;
-    background-color: #344D67;
+    background-color: #eaeff4;
 }
 
 .desc {
@@ -41,17 +41,17 @@
 .desc h2 {
     font-size: 1em;
     font-weight: 400;
-    color: white;
+    color: rgb(5, 1, 1);
 }
 
 .desc h3,
 p {
     font-weight: 300;
-    color: white;
+    color: rgb(4, 1, 1);
 }
 
 .desc h3 {
-    color: white;
+    color: rgb(5, 2, 2);
     font-size: 1em;
     padding: 10px 0 10px 0;
 }
