@@ -15,6 +15,8 @@ import { setStudentUser, studentLogout } from './redux/action/studentAction'
 import LoginPage from './Pages/LoginPage'
 import Home from './Pages/StudentHome'
 
+import StudentLogin from './Pages/StudentLogin'
+import TeacherLogin from './Pages/TeacherLogin'
 
 import StudentDetails from './Pages/StudentDetails'
 import facultyInterface from './Pages/FacultyInterface'
@@ -100,10 +102,18 @@ function App() {
     <div>
       <Router>
         <Switch>
-          <Route exact path='/' component={FacultyStudentLoginPags} />
+          {/* <Route exact path='/' component={FacultyStudentLoginPags} /> */}
+
+         
+          
+          <Route exact path='/' component={StudentLogin} />
+          <Route exact path='/facultylogin' component={TeacherLogin} />
+          
           <Route exact path='/adminLogin' component={LoginPage} />
           <Route exact path='/home' component={Home} />
           <Route exact path='/student/updateProfile' component={StudentUpdateProfile} />
+
+          
           <Route exact path="/studentDetails" component={StudentDetails} />
           <Route exact path='/faculty' component={facultyInterface} />
           <Route exact path='/attendenceFaculty' component={AttendenceFaculty} />

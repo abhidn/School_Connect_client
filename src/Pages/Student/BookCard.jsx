@@ -4,7 +4,7 @@ import '../../stylesheets/bookCard.css';
 
 const BookCard = (props) => {
     const book = props.book;
-
+    
     return (
         <div className="card-container">
 

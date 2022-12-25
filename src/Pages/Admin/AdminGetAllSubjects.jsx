@@ -27,7 +27,8 @@ const AdminGetAllSubjects = () => {
         }
 
     }, [store.admin.allSubject.length])
-    console.log(store.admin.allSubject)
+    // 15-12-2022
+    // console.log(store.admin.allSubject) 
     return (
         <div>
             <div>

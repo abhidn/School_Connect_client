@@ -43,6 +43,7 @@ const StudentUpdateProfile = () => {
         formData.append("aadharCard", aadharCard)
         formData.append("avatar", avatar)
         formData.append("email", store.student.student.student.email)
+        console.log(formData);
         dispatch(studentUpdate(formData, history))
         setModal(true)
         alert("Kindly login again to see updates")
@@ -97,4 +98,4 @@ const StudentUpdateProfile = () => {
         )
     }
 
-export default withRouter(StudentUpdateProfile)
+export default StudentUpdateProfile;

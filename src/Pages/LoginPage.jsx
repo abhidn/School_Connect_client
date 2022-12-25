@@ -64,7 +64,7 @@ const LoginPage = () => {
                                     <label htmlFor="passwordId">Password</label>
                                     <input onChange={(e) => setPassword(e.target.value)} value={password} className={classnames("form-control form-control-lg", {
                                         "is-invalid": error.password
-                                    })} value={password} type="password" id="passwordId" />
+                                    })} type="password" id="passwordId" />
                                     {error.password && (<div className="invalid-feedback">{error.password}</div>)}
                                 </div>
                                 <div class="row justify-content-center">
